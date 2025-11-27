@@ -96,7 +96,10 @@ fun EditNoteScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Row {
+            Row (
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.End
+            ){
                 Button(
                     onClick = onBack
                 ) {
