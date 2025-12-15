@@ -23,8 +23,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import es.upm.ging.notes.R
 import es.upm.ging.notes.ui.NoteViewModel
 import es.upm.ging.notes.data.Note
 
@@ -53,16 +55,16 @@ fun NoteListScreen(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(
-                        text = "Notas",
+                        text = stringResource(id = R.string.notes),
                         style = MaterialTheme.typography.titleLarge
                     )
                     Row {
-                        IconButton(onClick = onAddNote) {Icon(Icons.Filled.Add, contentDescription = "Añadir") }
-                        IconButton(onClick = onHelp) { Icon(Icons.AutoMirrored.Filled.HelpOutline, contentDescription = "Ayuda") }
+                        IconButton(onClick = onAddNote) {Icon(Icons.Filled.Add, contentDescription = stringResource(id = R.string.add)) }
+                        IconButton(onClick = onHelp) { Icon(Icons.AutoMirrored.Filled.HelpOutline, contentDescription = stringResource(id = R.string.help)) }
                         IconButton(
                             onClick = { showDeleteAllDialog = true },
                             enabled = !notes.isEmpty()
-                        ) { Icon(Icons.Filled.DeleteSweep, contentDescription = "Vaciar") }
+                        ) { Icon(Icons.Filled.DeleteSweep, contentDescription = stringResource(id = R.string.clear)) }
                     }
                 }
             }
@@ -83,19 +85,19 @@ fun NoteListScreen(
             noteToDelete?.let { note ->
                 AlertDialog(
                     onDismissRequest = { noteToDelete = null },
-                    title = { Text("¿Eliminar nota?") },
-                    text = { Text("¿Seguro que deseas borrar \"${note.title}\"? Esta acción no se puede deshacer.") },
+                    title = { Text(stringResource(id = R.string.delete_note_title)) },
+                    text = { Text(stringResource(id = R.string.delete_note_text, note.title)) },
                     confirmButton = {
                         Button(onClick = {
                             vm.delete(note)
                             noteToDelete = null
                         }) {
-                            Text("Eliminar")
+                            Text(stringResource(id = R.string.delete))
                         }
                     },
                     dismissButton = {
                         Button(onClick = { noteToDelete = null }) {
-                            Text("Cancelar")
+                            Text(stringResource(id = R.string.cancel))
                         }
                     }
                 )
@@ -105,19 +107,19 @@ fun NoteListScreen(
             if (showDeleteAllDialog) {
                 AlertDialog(
                     onDismissRequest = { showDeleteAllDialog = false },
-                    title = { Text("¿Borrar todas las notas?") },
-                    text = { Text("Esta acción no se puede deshacer.") },
+                    title = { Text(stringResource(id = R.string.clear_all_notes_title)) },
+                    text = { Text(stringResource(id = R.string.clear_all_notes_text)) },
                     confirmButton = {
                         Button(onClick = {
                             onClearAll()
                             showDeleteAllDialog = false
                         }) {
-                            Text("Eliminar todo")
+                            Text(stringResource(id = R.string.delete_all))
                         }
                     },
                     dismissButton = {
                         Button(onClick = { showDeleteAllDialog = false }) {
-                            Text("Cancelar")
+                            Text(stringResource(id = R.string.cancel))
                         }
                     }
                 )
@@ -134,9 +136,9 @@ private fun EmptyListMessage() {
             .padding(24.dp),
         verticalArrangement = Arrangement.Center
     ) {
-        Text("No hay notas guardadas.")
+        Text(stringResource(id = R.string.no_notes_saved))
         Spacer(Modifier.height(8.dp))
-        Text("Usa el botón “Añadir” del menú para crear tu primera nota.")
+        Text(stringResource(id = R.string.use_add_button_to_create_note))
     }
 }
 

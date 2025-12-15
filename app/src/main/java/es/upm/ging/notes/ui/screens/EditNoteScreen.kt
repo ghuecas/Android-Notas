@@ -6,7 +6,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import es.upm.ging.notes.R
 import es.upm.ging.notes.data.Note
 import es.upm.ging.notes.ui.NoteViewModel
 import kotlinx.coroutines.launch
@@ -33,6 +35,8 @@ fun EditNoteScreen(
 
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
+    val titleRequiredMessage = stringResource(id = R.string.title_required)
+
 
     LaunchedEffect(note) {
         if (note != null) {
@@ -61,14 +65,14 @@ fun EditNoteScreen(
                 .then(gestureModifier)
         ) {
 
-            Text(text = if (noteId == null) "Nueva nota" else "Editar nota")
+            Text(text = if (noteId == null) stringResource(id = R.string.new_note) else stringResource(id = R.string.edit_note))
 
             Spacer(modifier = Modifier.height(16.dp))
 
             OutlinedTextField(
                 value = title,
                 onValueChange = { title = it },
-                label = { Text("Título") },
+                label = { Text(stringResource(id = R.string.note_title_hint)) },
                 modifier = Modifier.fillMaxWidth()
             )
 
@@ -77,7 +81,7 @@ fun EditNoteScreen(
             OutlinedTextField(
                 value = category,
                 onValueChange = { category = it },
-                label = { Text("Categoría") },
+                label = { Text(stringResource(id = R.string.note_category_hint)) },
                 modifier = Modifier.fillMaxWidth()
             )
 
@@ -86,7 +90,7 @@ fun EditNoteScreen(
             OutlinedTextField(
                 value = content,
                 onValueChange = { content = it },
-                label = { Text("Contenido") },
+                label = { Text(stringResource(id = R.string.note_content_hint)) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .heightIn(min = 120.dp, max = 200.dp),
@@ -102,7 +106,7 @@ fun EditNoteScreen(
                 Button(
                     onClick = onBack
                 ) {
-                    Text("Volver")
+                    Text(stringResource(id = R.string.back))
                 }
 
                 Spacer(Modifier.width(16.dp))
@@ -112,16 +116,11 @@ fun EditNoteScreen(
                     onClick = {
                         if (title.isBlank()) {
                             scope.launch {
-                                val result = snackbarHostState.showSnackbar(
-                                    message = "El título es obligatorio",
-                                    //actionLabel = "Ok",
+                                snackbarHostState.showSnackbar(
+                                    message = titleRequiredMessage,
                                     withDismissAction = true,
                                     duration = SnackbarDuration.Short
                                 )
-
-                                // Si el usuario pulsa "Ok"
-                                if (result == SnackbarResult.ActionPerformed) { // nada que hacer
-                                }
                             }
                         } else {
                             val newNote = Note(
@@ -141,7 +140,7 @@ fun EditNoteScreen(
                         }
                     }
                 ) {
-                    Text("Guardar")
+                    Text(stringResource(id = R.string.save))
                 }
             }
         }
