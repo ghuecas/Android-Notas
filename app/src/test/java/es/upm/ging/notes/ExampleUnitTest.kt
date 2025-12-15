@@ -1,4 +1,4 @@
-package es.upm.ging.notas
+package es.upm.ging.notes
 
 import org.junit.Test
 

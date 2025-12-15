@@ -1,4 +1,4 @@
-package es.upm.ging.notas
+package es.upm.ging.notes
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
@@ -6,10 +6,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import es.upm.ging.notas.ui.screens.HelpScreen
-import es.upm.ging.notas.ui.NoteViewModel
-import es.upm.ging.notas.ui.screens.EditNoteScreen
-import es.upm.ging.notas.ui.screens.NoteListScreen
+import es.upm.ging.notes.ui.screens.HelpScreen
+import es.upm.ging.notes.ui.NoteViewModel
+import es.upm.ging.notes.ui.screens.EditNoteScreen
+import es.upm.ging.notes.ui.screens.NoteListScreen
 
 object Routes {
     const val LIST = "list"

@@ -1,4 +1,4 @@
-package es.upm.ging.notas.data
+package es.upm.ging.notes.data
 
 import kotlinx.coroutines.flow.Flow
 

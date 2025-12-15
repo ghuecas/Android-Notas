@@ -1,4 +1,4 @@
-package es.upm.ging.notas.ui.screens
+package es.upm.ging.notes.ui.screens
 
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.layout.*
@@ -7,9 +7,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import es.upm.ging.notas.data.Note
-import es.upm.ging.notas.ui.NoteViewModel
+import es.upm.ging.notes.data.Note
+import es.upm.ging.notes.ui.NoteViewModel
 import kotlinx.coroutines.launch
 
 @Composable

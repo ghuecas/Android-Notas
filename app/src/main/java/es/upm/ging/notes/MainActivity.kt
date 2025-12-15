@@ -1,4 +1,4 @@
-package es.upm.ging.notas
+package es.upm.ging.notes
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,9 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import es.upm.ging.notas.ui.NoteViewModel
-import es.upm.ging.notas.ui.theme.NotasTheme
-import es.upm.ging.notas.AppNav
+import es.upm.ging.notes.ui.NoteViewModel
+import es.upm.ging.notes.ui.theme.NotesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +16,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-            NotasTheme {
+            NotesTheme {
                 val vm: NoteViewModel = viewModel(factory = NoteViewModel.Factory(applicationContext))
                 AppNav(vm)
             }
@@ -28,7 +27,7 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    NotasTheme {
+    NotesTheme {
 
     }
 }

@@ -47,7 +47,7 @@
 # 2. Estructura del Proyecto
 
 ```
-es.upm.ging.notas/
+es.upm.ging.notes/
 ├── data/
 │   ├── Note.kt              (Entity)
 │   ├── NoteDao.kt           (DAO)
@@ -551,7 +551,7 @@ LaunchedEffect(note) {
    - Código autodocumentado
 
 5. ✅ **Consistencia en nombres de paquetes**
-   - Todo bajo `es.upm.ging.notas`
+   - Todo bajo `es.upm.ging.notes`
 
 ---
 

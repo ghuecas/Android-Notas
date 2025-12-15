@@ -1,4 +1,4 @@
-package es.upm.ging.notas
+package es.upm.ging.notes
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("es.upm.ging.notas", appContext.packageName)
+        assertEquals("es.upm.ging.notes", appContext.packageName)
     }
 }

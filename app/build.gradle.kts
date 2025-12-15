@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "es.upm.ging.notas"
+    namespace = "es.upm.ging.notes"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "es.upm.ging.notas"
+        applicationId = "es.upm.ging.notes"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

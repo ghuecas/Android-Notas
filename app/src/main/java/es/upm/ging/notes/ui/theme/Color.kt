@@ -1,4 +1,4 @@
-package es.upm.ging.notas.ui.theme
+package es.upm.ging.notes.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,12 +1,12 @@
-package es.upm.ging.notas.ui
+package es.upm.ging.notes.ui
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import es.upm.ging.notas.data.Note
-import es.upm.ging.notas.data.NoteDatabase
-import es.upm.ging.notas.data.NoteRepository
+import es.upm.ging.notes.data.Note
+import es.upm.ging.notes.data.NoteDatabase
+import es.upm.ging.notes.data.NoteRepository
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.Flow
 

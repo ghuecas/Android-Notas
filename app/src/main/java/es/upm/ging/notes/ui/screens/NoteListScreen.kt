@@ -1,6 +1,5 @@
-package es.upm.ging.notas.ui.screens
+package es.upm.ging.notes.ui.screens
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -26,8 +25,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import es.upm.ging.notas.ui.NoteViewModel
-import es.upm.ging.notas.data.Note
+import es.upm.ging.notes.ui.NoteViewModel
+import es.upm.ging.notes.data.Note
 
 @Composable
 fun NoteListScreen(
